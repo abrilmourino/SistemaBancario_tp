@@ -146,10 +146,9 @@ Posibles mejoras a implementar:
 - [ ] Encriptación de archivos de datos
 - [ ] Respaldo automático de datos
 
-## Autores
+## Autor
 
-- Desarrollado como proyecto educativo de programación en C
+- Abril Mouriño
 
-## Licencia
 
-Este proyecto se distribuye bajo la licencia MIT.
+
