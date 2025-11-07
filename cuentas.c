@@ -211,3 +211,37 @@ int transferir(int origen, int destino, double monto) {
     free(arr);
     return res;
 }
+
+int eliminar_cuenta(int numero) {
+    int cantidad = 0;
+    Cuenta *arr = cargar_cuentas(&cantidad);
+    if (!arr) return -1;
+
+    int idx = buscar_indice_por_numero(arr, cantidad, numero);
+    if (idx < 0) {
+        free(arr);
+        return -1; // Cuenta no encontrada
+    }
+
+    // Verificar que el saldo sea 0 (con tolerancia para punto flotante)
+    if (arr[idx].saldo < -0.01 || arr[idx].saldo > 0.01) {
+        free(arr);
+        return -2; // Saldo no es cero
+    }
+
+    // Marcar cuenta como inactiva (eliminación lógica)
+    arr[idx].activa = 0;
+    
+    int res = guardar_cuentas(arr, cantidad);
+    
+    if (res == 0) {
+        char buf[256];
+        snprintf(buf, sizeof(buf),
+                 "ELIMINACION: Cuenta %d | Titular: %s | DNI: %s",
+                 numero, arr[idx].titular, arr[idx].dni);
+        registrar_movimiento(buf);
+    }
+
+    free(arr);
+    return res;
+}

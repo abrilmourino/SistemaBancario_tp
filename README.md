@@ -49,9 +49,6 @@ SistemaBancario/
 7) Eliminar cuenta
 0) Salir
 ```
-# Como se ve el menu principal
-<img width="256" height="152" alt="image" src="https://github.com/user-attachments/assets/c446c0bb-20a9-4da7-86fa-b7798fc22c0b" />
-
 
 ## Compilación y Ejecución
 
@@ -151,10 +148,8 @@ Posibles mejoras a implementar:
 
 ## Autores
 
--Abril Mouriño
+- Desarrollado como proyecto educativo de programación en C
 
 ## Licencia
 
 Este proyecto se distribuye bajo la licencia MIT.
-
-
