@@ -129,26 +129,10 @@ typedef struct {
 - ✅ Validación de entrada para prevenir errores
 - ✅ Manejo seguro de memoria (liberación correcta)
 
-## Limitaciones Conocidas
-
-- Los números de cuenta no se reutilizan tras eliminación
-- No hay sistema de autenticación de usuarios
-- Capacidad limitada por memoria disponible del sistema
-- Sin encriptación de datos almacenados
-
-## Desarrollo Futuro
-
-Posibles mejoras a implementar:
-- [ ] Sistema de autenticación con PIN
-- [ ] Interfaz gráfica de usuario
-- [ ] Reportes y estadísticas
-- [ ] Límites de transacciones
-- [ ] Encriptación de archivos de datos
-- [ ] Respaldo automático de datos
-
 ## Autor
 
 - Abril Mouriño
+
 
 
 
