@@ -12,11 +12,11 @@ static void menu() {
     printf("2) Depositar\n");
     printf("3) Extraer\n");
     printf("4) Transferir\n");
-    printf("5) Mostrar cuenta por número\n");
+    printf("5) Mostrar cuenta por numero\n");
     printf("6) Listar todas las cuentas\n");
     printf("7) Eliminar cuenta\n");
     printf("0) Salir\n");
-    printf("Elija una opción: ");
+    printf("Elija una opcion: ");
 }
 
 int main() {
@@ -39,28 +39,28 @@ int main() {
             fgets(dni, sizeof(dni), stdin);
             dni[strcspn(dni, "\n")] = '\0';
             printf("Saldo inicial: ");
-            if (scanf("%lf", &monto) != 1) { printf("Monto inválido.\n"); continue; }
+            if (scanf("%lf", &monto) != 1) { printf("Monto invalido.\n"); continue; }
             int nro = crear_cuenta(nombre, dni, monto);
-            if (nro > 0) printf("Cuenta creada con número %d\n", nro);
+            if (nro > 0) printf("Cuenta creada con numero %d\n", nro);
             else printf("Error al crear la cuenta.\n");
         }
         else if (opcion == 2) {
             int num; double monto;
             printf("Nro de cuenta: "); if (scanf("%d", &num) != 1) { printf("Entrada invalida.\n"); continue; }
-            printf("Monto a depositar: "); if (scanf("%lf", &monto) != 1) { printf("Monto inválido.\n"); continue; }
-            if (depositar(num, monto) == 0) printf("Depósito exitoso.\n"); else printf("Error en depósito.\n");
+            printf("Monto a depositar: "); if (scanf("%lf", &monto) != 1) { printf("Monto invalido.\n"); continue; }
+            if (depositar(num, monto) == 0) printf("Depósito exitoso.\n"); else printf("Error en deposito.\n");
         }
         else if (opcion == 3) {
             int num; double monto;
             printf("Nro de cuenta: "); if (scanf("%d", &num) != 1) { printf("Entrada invalida.\n"); continue; }
-            printf("Monto a extraer: "); if (scanf("%lf", &monto) != 1) { printf("Monto inválido.\n"); continue; }
-            if (extraer(num, monto) == 0) printf("Extracción exitosa.\n"); else printf("Error en extracción (saldo insuficiente o cuenta inexistente).\n");
+            printf("Monto a extraer: "); if (scanf("%lf", &monto) != 1) { printf("Monto invalido.\n"); continue; }
+            if (extraer(num, monto) == 0) printf("Extraccion exitosa.\n"); else printf("Error en extracción (saldo insuficiente o cuenta inexistente).\n");
         }
         else if (opcion == 4) {
             int ori, dest; double monto;
             printf("Cuenta origen: "); if (scanf("%d", &ori) != 1) { printf("Entrada invalida.\n"); continue; }
             printf("Cuenta destino: "); if (scanf("%d", &dest) != 1) { printf("Entrada invalida.\n"); continue; }
-            printf("Monto a transferir: "); if (scanf("%lf", &monto) != 1) { printf("Monto inválido.\n"); continue; }
+            printf("Monto a transferir: "); if (scanf("%lf", &monto) != 1) { printf("Monto invalido.\n"); continue; }
             if (transferir(ori, dest, monto) == 0) printf("Transferencia exitosa.\n"); else printf("Error en transferencia.\n");
         }
         else if (opcion == 5) {
@@ -86,7 +86,7 @@ int main() {
             }
             
             // Pedir confirmación
-            printf("\n¿Está seguro que desea eliminar esta cuenta? (s/N): ");
+            printf("\n¿Esta seguro que desea eliminar esta cuenta? (s/N): ");
             char confirmacion;
             getchar(); // consumir newline del scanf anterior
             confirmacion = getchar();
@@ -101,14 +101,15 @@ int main() {
                     printf("Error al eliminar la cuenta.\n");
                 }
             } else {
-                printf("Eliminación cancelada.\n");
+                printf("Eliminacion cancelada.\n");
             }
         }
         else {
-            printf("Opción inválida.\n");
+            printf("Opcion invalida.\n");
         }
     }
 
     printf("Saliendo...\n");
     return 0;
+
 }
